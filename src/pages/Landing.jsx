@@ -80,7 +80,7 @@ function LandingNav({ onSignup, onLogin, onExplore }) {
         right: 0,
         zIndex: 200,
         height: NAV_HEIGHT,
-        padding: '0 2.5rem',
+        padding: '0 clamp(1.2rem, 3vw, 2.5rem)',
         display: 'flex',
         justifyContent: 'space-between',
         alignItems: 'center',
@@ -91,7 +91,7 @@ function LandingNav({ onSignup, onLogin, onExplore }) {
       }}
     >
       <Logo />
-      <div style={{ display: 'flex', gap: '1.75rem', alignItems: 'center' }}>
+      <div style={{ display: 'flex', gap: 'clamp(0.75rem, 2vw, 1.75rem)', alignItems: 'center' }}>
         <NavLink onClick={onExplore}>Explore</NavLink>
         <NavLink onClick={onLogin}>Sign In</NavLink>
         <Button onClick={onSignup} size="sm">Get Started</Button>
@@ -113,7 +113,7 @@ function ArtworkMosaic() {
         gap: 8,
         width: '100%',
         maxWidth: 320,
-        marginLeft: 'auto',
+        margin: '0 auto',
       }}
     >
       {Array.from({ length: 9 }, (_, i) => (
@@ -138,8 +138,8 @@ function HeroSection({ onSignup, onExplore }) {
       style={{
         paddingTop: NAV_HEIGHT + 64,
         paddingBottom: '6rem',
-        paddingLeft: '2.5rem',
-        paddingRight: '2.5rem',
+        paddingLeft: 'clamp(1.2rem, 3vw, 2.5rem)',
+        paddingRight: 'clamp(1.2rem, 3vw, 2.5rem)',
         minHeight: '100vh',
         display: 'flex',
         alignItems: 'center',
@@ -180,8 +180,8 @@ function HeroSection({ onSignup, onExplore }) {
           maxWidth: MAX_WIDTH,
           margin: '0 auto',
           display: 'grid',
-          gridTemplateColumns: '1fr 320px',
-          gap: '4rem',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 340px), 1fr))',
+          gap: '3rem',
           alignItems: 'center',
           position: 'relative',
           zIndex: 1,
